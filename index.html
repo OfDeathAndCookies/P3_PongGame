@@ -2,13 +2,21 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Pong</title>
+		<link rel="stylesheet" href="src/styles/game.css">  
+		<title>PONG</title>
 	</head>
-	<body>
+	<body class="body">
 		<div class="game-wrapper">
-			<h1>Pong</h1>
+			<h1>PONG</h1>
 			<div id="game"></div>
-			<!-- Rough-out your SVG mark-up here to start... -->
+			<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 256">
+				<line class="coord" x1="261" x2="261" y1="0" y2="256" style="stroke:rgb(255,0,0);stroke-width:1" />
+				<line class="middleLine" x1="261" x2="261" y1="16" y2="240" style="stroke: white ;stroke-width:1;opacity:90%" stroke-dasharray="4 5"/>
+				<rect x="24" y="100"/>
+				<rect x="488" y="100"/>
+				<line  x1="0" x2="512" y1="128" y2="128" style="stroke:rgb(0, 255, 0);stroke-width:1"/>
+				<circle cx="261" cy="128" r="5" fill="red"/>
+			</svg> -->
 		</div>
 		<script type="text/javascript" src="build/bundle.js"></script>
 	</body>

@@ -68,9 +68,18 @@ table {
 
 html {
   font-size: 16px;
+  background-color: black;
+  color: white;
+}
+
+.gr__127_0_0_1{
+  background-color: black;
+  color: white;
 }
 
 body {
+  background-color: black;
+  color: white;
   align-items: center;
   display: flex;
   font-family: 'Silkscreen Web', monotype;
