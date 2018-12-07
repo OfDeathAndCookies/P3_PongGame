@@ -1,4 +1,4 @@
-# Pong Game
+﻿# Pong Game
 
 A basic pong game using SVGs.
 
@@ -19,8 +19,8 @@ A basic pong game using SVGs.
 ## Keys
 
 **Player 1:**
-* a: up
-* z: down
+* w: up
+* s: down
 
 **Player 2:**
 * ▲ : up
