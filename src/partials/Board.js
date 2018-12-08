@@ -16,13 +16,12 @@ export class Board {
             // CENTER DOTTED LINE
             let line = document.createElementNS(SVG_NS, 'line');
             line.setAttributeNS(null, 'x1', (this.width/2));
-            line.setAttributeNS(null, 'y1', 0);
+            line.setAttributeNS(null, 'y1', 10);
             line.setAttributeNS(null, 'x2', (this.width/2));
-            line.setAttributeNS(null, 'y2', (this.height));
+            line.setAttributeNS(null, 'y2', (this.height -10));
             line.setAttributeNS(null, 'stroke', 'white');
-            line.setAttributeNS(null, 'stroke-dasharray', '20, 15');
-            line.setAttributeNS(null, 'stoke-width', '4');
-            
+            line.setAttributeNS(null, 'stroke-dasharray', '10, 5');
+            line.setAttributeNS(null, 'stoke-width', '2');
             
             svg.appendChild(rect);
             svg.appendChild(line);

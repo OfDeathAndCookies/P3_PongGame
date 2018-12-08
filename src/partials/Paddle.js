@@ -11,7 +11,7 @@ export class Paddle {
         this.down = down;
 
         // MOVE PADDLES
-        this.speed = 10;
+        this.speed = 15;
         this.score = 0;
 
         document.addEventListener('keydown', event => {

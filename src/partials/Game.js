@@ -4,12 +4,14 @@ import { Ball } from './Ball';
 import { Board } from './Board';
 import { Paddle } from './Paddle';
 import { Score } from './Score';
+import { Winner } from './Winner';
 
 export default class Game {
     constructor(element, width, height){
         this.element = element;
         this.width = width;
         this.height = height;
+        this.blink = true;
         
         this.ballRadius = 8;
         this.gameElement = document.getElementById(this.element);
@@ -37,15 +39,15 @@ export default class Game {
         )
 
         this.ball = new Ball(this.ballRadius, this.width, this.height);
-        this.score1 = new Score(this.width / 2 - 50, 30, SCORESIZE);
-        this.score2 = new Score(this.width / 2 + 25, 30, SCORESIZE);
+        this.score1 = new Score(this.width / 2 - 50, 40, SCORESIZE);
+        this.score2 = new Score(this.width / 2 + 25, 40, SCORESIZE);
         document.addEventListener('keydown', event => {
            switch(event.key){
                case KEYS.spaceBar:
                this.pause = !this.pause;
                    break;        
            }
-        });
+        });  
     }
     
     render(){
@@ -69,5 +71,20 @@ export default class Game {
         this.ball.render(svg, this.player1, this.player2);
         this.score1.render(svg, this.player1.getScore());
         this.score2.render(svg, this.player2.getScore());
+
+        // SHOW WINNER
+        if (this.player1.score === 10){
+            this.pause = true;
+            this.Winner = new Winner (this.width / 16, this.height / 2 + 15, 50, 'WINNER');
+            this.Winner.render(svg);    
+
+        }       
+        else if (this.player2.score === 10){
+            this.pause = true;
+            this.Winner2 = new Winner (this.width - 232, this.height / 2 + 15, 50, 'WINNER');
+            this.Winner2.render(svg);    
+
+        }   
+
     }
 }

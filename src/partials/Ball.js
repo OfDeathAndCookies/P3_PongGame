@@ -2,7 +2,7 @@ import  { SVG_NS } from '../settings'
 
 export class Ball {
     constructor (radius, width, height){
-        this.ping = new Audio('public/sounds/pong-01.wav');
+        this.funnySound = new Audio('public/sounds/pong-01.wav');
         this.radius = radius;
         this.boardWidth = width;
         this.boardHeight = height; 
@@ -37,18 +37,16 @@ export class Ball {
 
     paddleCollision (player1, player2){
         if (this.vx > 0){
-            //Check for player2
             const coordinates = player2.coordinates();
             const hit = (this.x + this.radius >= coordinates[0]) 
                         && (this.y <= coordinates[3]) 
                         && (this.y >= coordinates[2]);
             if (hit){
                 this.vx = this.vx * -1;
-                this.ping = new Audio('public/sounds/pong-01.wav');
+                this.funnySound.play();
             }
 
         } else {
-            //Check for player1
             const coordinates = player1.coordinates();
                 const hit = (this.x - this.radius <= coordinates[1]) 
                         && (this.y <= coordinates[3]) 
@@ -56,6 +54,7 @@ export class Ball {
 
             if (hit) {
                 this.vx = this.vx * -1;
+                this.funnySound.play();
             }
         }
     }
@@ -72,6 +71,8 @@ export class Ball {
             this.reset();
             this.direction *= -1;
         }
+
+       
     }
 
     render(svg, player1, player2){
