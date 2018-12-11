@@ -71,8 +71,6 @@ export class Ball {
             this.reset();
             this.direction *= -1;
         }
-
-       
     }
 
     render(svg, player1, player2){
